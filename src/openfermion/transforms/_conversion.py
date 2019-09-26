@@ -392,7 +392,7 @@ def get_fermion_operator(operator):
 def _polynomial_tensor_to_fermion_operator(operator):
     fermion_operator = FermionOperator()
     for term in operator:
-        fermion_operator += FermionOperator(term, operator[term])
+        fermion_operator += FermionOperator(term, operator[term] or 0.0)
     return fermion_operator
 
 
